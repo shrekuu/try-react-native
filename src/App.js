@@ -6,8 +6,9 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import {Platform, Text, View} from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,7 +17,12 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+EStyleSheet.build({
+  $bgColor: 'red'
+});
+
 type Props = {};
+
 export default class App extends Component<Props> {
   render() {
     return (
@@ -29,12 +35,12 @@ export default class App extends Component<Props> {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '$bgColor',
   },
   welcome: {
     fontSize: 20,
