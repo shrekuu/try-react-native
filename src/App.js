@@ -1,55 +1,18 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, { Component } from 'react';
-import {Platform, Text, View} from 'react-native';
+import React from 'react'
+import { Dimensions } from 'react-native'
+import AppNavigator from './AppNavigator'
+import { createAppContainer } from 'react-navigation'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const { width } = Dimensions.get('window')
+// 使用了 EStyleSheet, rem 不能写入行内
+// 以 750 宽为缩放基线
+// UI 稿中 10 像素, 在样式中使用 `10rem`
+// 所以视图元素在其它尺寸屏幕上是整体缩放的
+const rem = width / 750
 
 EStyleSheet.build({
-  $bgColor: 'red'
-});
+  $rem: rem
+})
 
-type Props = {};
-
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
-}
-
-const styles = EStyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '$bgColor',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default createAppContainer(AppNavigator)
