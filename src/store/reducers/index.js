@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
-import todo from './todo'
-
+import repoList from './repo-list'
 
 export default combineReducers({
-  todo
+  repoList
 })

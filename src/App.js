@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { ErrorBoundary } from 'react'
+import { Provider } from 'react-redux'
 import { Dimensions } from 'react-native'
 import AppNavigator from './AppNavigator'
 import { createAppContainer } from 'react-navigation'
 import EStyleSheet from 'react-native-extended-stylesheet'
+import configureStore from './store'
 
 const { width } = Dimensions.get('window')
 // 使用了 EStyleSheet, rem 不能写入行内
@@ -15,4 +17,22 @@ EStyleSheet.build({
   $rem: rem
 })
 
-export default createAppContainer(AppNavigator)
+const AppContainer = createAppContainer(AppNavigator)
+
+const store = configureStore()
+
+export default class App extends React.Component {
+
+  constructor (props) {
+    super(props)
+    this.errorShown = false
+  }
+
+  render () {
+    return (
+      <Provider store={store}>
+        <AppContainer/>
+      </Provider>
+    )
+  }
+}
