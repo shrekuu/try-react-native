@@ -3,6 +3,7 @@ package com.tryreactnative;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.theweflex.react.WeChatPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -28,8 +29,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new LinearGradientPackage(),
-            new RNGestureHandlerPackage()
+          new WeChatPackage(),
+          new LinearGradientPackage(),
+          new RNGestureHandlerPackage()
       );
     }
 
@@ -56,7 +58,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   // 去掉在 Android P 上的提醒弹窗
   // ref: https://www.jianshu.com/p/f87fe39caf1d
-  private void closeAndroidPDialog(){
+  private void closeAndroidPDialog() {
     try {
       Class aClass = Class.forName("android.content.pm.PackageParser$Package");
       Constructor declaredConstructor = aClass.getDeclaredConstructor(String.class);

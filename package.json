@@ -16,6 +16,7 @@
     "react-native-keyboard-manager": "^4.0.13-10",
     "react-native-linear-gradient": "^2.5.3",
     "react-native-snap-carousel": "^3.7.5",
+    "react-native-wechat": "^1.9.10",
     "react-navigation": "^3.0.9",
     "react-navigation-redux-helpers": "^2.0.9",
     "react-redux": "^6.0.0",
