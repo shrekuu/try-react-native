@@ -7,6 +7,7 @@ import RepoList from './scenes/repo-list/RepoList'
 import SliderView from './scenes/slider-view'
 import CarouselView from './scenes/carousel-view'
 import Login from './scenes/login'
+import HtmlView from './scenes/html-view'
 
 const AppNavigator = createStackNavigator(
   {
@@ -18,9 +19,10 @@ const AppNavigator = createStackNavigator(
     SliderView,
     CarouselView,
     Login,
+    HtmlView,
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'HtmlView',
   },
 )
 
