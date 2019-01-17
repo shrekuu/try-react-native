@@ -8,6 +8,7 @@ import SliderView from './scenes/slider-view'
 import CarouselView from './scenes/carousel-view'
 import Login from './scenes/login'
 import HtmlView from './scenes/html-view'
+import WebviewView from './scenes/webview-view'
 
 const AppNavigator = createStackNavigator(
   {
@@ -20,9 +21,10 @@ const AppNavigator = createStackNavigator(
     CarouselView,
     Login,
     HtmlView,
+    WebviewView,
   },
   {
-    initialRouteName: 'HtmlView',
+    initialRouteName: 'WebviewView',
   },
 )
 

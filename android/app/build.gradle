@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-webview')
     implementation project(':react-native-wechat')
     implementation project(':react-native-linear-gradient')
     implementation project(':react-native-gesture-handler')

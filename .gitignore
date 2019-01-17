@@ -30,7 +30,7 @@ build/
 local.properties
 *.iml
 
-# node.js
+# nodeWebviewView.js
 #
 node_modules/
 npm-debug.log
@@ -53,4 +53,4 @@ buck-out/
 */fastlane/screenshots
 
 # Bundle artifact
-*.jsbundle
+*WebviewView.jsbundle
